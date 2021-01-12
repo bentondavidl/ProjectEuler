@@ -8,6 +8,7 @@ while len(primes) < target:
     for prime in primes:
         if flag and current_number % prime == 0:
             flag = False
+            break
     primes.append(current_number) if flag else None
 
 print(primes[-1])
