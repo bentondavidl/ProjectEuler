@@ -1,20 +1,12 @@
-def n_pentagonal(n):
-    return int(n*(3*n-1)/2)
+def solve():
+    pentags = set()
+    i = 1000
+    while True:
+        i += 1
+        s = (3*i*i - i) // 2
+        for Pj in pentags:
+            if s-Pj in pentags and s-2*Pj in pentags: 
+                return s-2*Pj
+        pentags.add(s)
 
-pentags = []
-for i in range(1, 100000):
-    pentags.append(n_pentagonal(i))
-
-flag = True
-slow = 0
-p_set = set(pentags)
-found = -1
-while flag and slow < len(pentags):
-    for i in range(slow+1, len(pentags)):
-        if (res:=pentags[i] + pentags[slow] in p_set) and (res + pentags[i] in p_set):
-            flag = False
-            found = pentags[slow]
-            break
-    slow += 1
-    
-print(found)
+print(solve())
