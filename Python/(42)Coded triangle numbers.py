@@ -1,7 +1,7 @@
 triangle_nums = [int(.5*i*(i+1)) for i in range(1, 21)]
 
 
-with open('data files/p042_words.txt') as f:
+with open('data/p042_words.txt') as f:
     words = f.read().replace('"', '').split(',')
 
 count = 0

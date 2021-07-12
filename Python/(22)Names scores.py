@@ -1,4 +1,4 @@
-with open(r'data files\p022_names.txt') as file:
+with open(r'data\p022_names.txt') as file:
     names = file.read().replace('"', '').split(',')
 
 names.sort()
